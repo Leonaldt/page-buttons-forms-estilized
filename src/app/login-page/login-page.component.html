@@ -1,0 +1,20 @@
+<div class="login-page" fxLayout="column">
+	<p>Note: This is a demo form and is not meant to work.</p>
+	<form [formGroup]="loginForm" fxLayout="column">
+		<mat-form-field class="form-field">
+			<mat-icon matPrefix>email</mat-icon>
+			<input matInput placeholder="Email" formControlName="email" type="email">
+			<mat-error *ngIf="loginForm.get('email')?.hasError('required')">This is required.</mat-error>
+			<mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter a valid email address.</mat-error>
+		</mat-form-field>
+		<mat-form-field class="form-field">
+			<mat-icon matPrefix>vpn_key</mat-icon>
+			<input matInput placeholder="Password" formControlName="password" [type]="hidePassword ? 'password': 'text'">
+			<button mat-icon-button matSuffix [matTooltip]="(hidePassword ? 'Show' : 'Hide') + ' Password'" (click)="hidePassword = !hidePassword">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+			<mat-error *ngIf="loginForm.get('password')?.hasError('required')">This is required.</mat-error>
+		</mat-form-field>
+		<button mat-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+	</form>
+</div>

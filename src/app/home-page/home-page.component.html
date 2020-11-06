@@ -1,0 +1,10 @@
+<p>Welcome to the home page!</p>
+<p>There's not much here as of now.</p>
+<p>Click the buttons below to open/close the snackbar!</p>
+<br>
+<h2>Login snackbar options</h2>
+<form [formGroup]="loginSnackBarForm">
+
+</form>
+<button mat-stroked-button (click)="openSnackBar()" color="primary" [disabled]="snackBarShown">Open Login Snackbar</button>
+<button mat-stroked-button (click)="closeSnackBar()" color="warn" [disabled]="!snackBarShown">Close Login Snackbar</button>

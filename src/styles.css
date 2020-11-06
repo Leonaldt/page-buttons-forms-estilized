@@ -1,0 +1,28 @@
+/* Add application styles & imports to this file! */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.snackbar-link {
+  color: #ffd740 !important;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, sans-serif;
+}
+.app-content {
+  padding: 2.5%;
+}
+/* Hack for tabs */
+.tab-row {
+  display: contents !important;
+}
+.tab-links {
+  width: 100% !important;
+}
+.tab-links > .mat-tab-links > .mat-tab-link {
+  width: 50%;
+}
+.form-field {
+  width: 100%;
+}

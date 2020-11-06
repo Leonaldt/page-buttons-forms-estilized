@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+	HTML Snackbar | StackOverflow
+	<span fxFlex></span>
+	<a mat-icon-button href="https://snackbar-with-html-so.stackblitz.io" target="_blank" matTooltip="Open in new tab">
+		<mat-icon>
+			<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+				<path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+				/>
+			</svg>
+		</mat-icon>
+	</a>
+	<a mat-icon-button href="https://stackoverflow.com/questions/46949233/insert-a-link-into-matsnackbar" target="_blank" matTooltip="Back to question">
+		<mat-icon>
+			<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+				<path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z"
+				/>
+			</svg>
+		</mat-icon>
+	</a>
+</mat-toolbar>
+<nav mat-tab-nav-bar backgroundColor="accent" class="tab-links mat-elevation-z3">
+	<a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+		{{link.label}}
+	</a>
+</nav>
+<div class="app-content">
+	<router-outlet></router-outlet>
+</div>
